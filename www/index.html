@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a la Configuración de Apache</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Apache Config</a>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">¡Bienvenido a la Configuración de Apache en Sistemas Operativos!</h1>
+            <p class="lead">Esta página es una guía detallada para configurar Apache en varios sistemas operativos usando Docker y Docker Compose.</p>
+            <hr class="my-4">
+            <p>Aprenderás a configurar Apache para servir múltiples sitios web, a gestionar módulos y a personalizar la configuración según tus necesidades.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Leer más</a>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Configuración Básica</h2>
+                <p>Para comenzar, necesitas tener Docker y Docker Compose instalados en tu sistema. Luego, puedes usar los archivos de configuración proporcionados para construir tu contenedor de Apache.</p>
+                <pre><code class="language-dockerfile">
+# Ejemplo de Dockerfile básico
+FROM httpd:2.4
+COPY ./config/my-httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./www/ /usr/local/apache2/htdocs/
+                </code></pre>
+            </div>
+            <div class="col-md-6">
+                <h2>Configuración Avanzada</h2>
+                <p>Para una configuración más avanzada, puedes personalizar los archivos de configuración de Apache, como <code>httpd.conf</code> y <code>httpd-vhosts.conf</code>. También puedes agregar módulos adicionales y scripts de inicio personalizados.</p>
+                <pre><code class="language-dockerfile">
+# Ejemplo de Dockerfile avanzado
+FROM httpd:2.4
+RUN apt-get update && apt-get install -y vim
+COPY ./config/ /usr/local/apache2/conf/
+COPY ./scripts/startup.sh /usr/local/bin/startup.sh
+RUN chmod +x /usr/local/bin/startup.sh
+                </code></pre>
+            </div>
+        </div>
+        
+        <footer class="footer mt-5">
+            <div class="container">
+                <span class="text-muted">© 2024 Configuración de Apache en Sistemas Operativos</span>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

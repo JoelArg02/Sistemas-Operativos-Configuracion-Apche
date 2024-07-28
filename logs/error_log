@@ -1,0 +1,6 @@
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.21.0.2. Set the 'ServerName' directive globally to suppress this message
+[Sun Jul 28 22:21:38.723695 2024] [mpm_event:notice] [pid 8:tid 8] AH00489: Apache/2.4.62 (Unix) configured -- resuming normal operations
+[Sun Jul 28 22:21:38.723755 2024] [unixd:alert] [pid 11:tid 11] AH02155: getpwuid: couldn't determine user name from uid 4294967295, you probably need to modify the User directive
+[Sun Jul 28 22:21:38.723634 2024] [unixd:alert] [pid 10:tid 10] AH02155: getpwuid: couldn't determine user name from uid 4294967295, you probably need to modify the User directive
+[Sun Jul 28 22:21:38.723872 2024] [unixd:alert] [pid 12:tid 12] AH02155: getpwuid: couldn't determine user name from uid 4294967295, you probably need to modify the User directive
+[Sun Jul 28 22:21:38.723966 2024] [core:notice] [pid 8:tid 8] AH00094: Command line: 'httpd -D FOREGROUND'

@@ -1,0 +1,20 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apache_service
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/usr/local/apache2/htdocs:ro
+      - ./logs:/usr/local/apache2/logs
+      - ./config/sites-available:/usr/local/apache2/sites-available
+      - ./config/sites-enabled:/usr/local/apache2/sites-enabled
+    environment:
+      - APACHE_LOG_DIR=/usr/local/apache2/logs
+    restart: always
+
+networks:
+  default:
+    driver: bridge
