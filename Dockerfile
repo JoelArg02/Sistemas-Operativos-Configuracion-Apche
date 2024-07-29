@@ -31,8 +31,8 @@ COPY ./config/extra/my-httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vho
 RUN mkdir -p /usr/local/apache2/sites-available /usr/local/apache2/sites-enabled
 
 # Copiar scripts de inicio personalizados
-COPY ./scripts/startup.sh /usr/local/bin/startup.sh
-RUN chmod +x /usr/local/bin/startup.sh
+COPY ./scripts/startupS.sh /usr/local/bin/startupS.sh
+RUN chmod +x /usr/local/bin/startupS.sh
 
 # Establecer el directorio de trabajo
 WORKDIR /usr/local/apache2
@@ -41,4 +41,4 @@ WORKDIR /usr/local/apache2
 EXPOSE 80
 
 # Comando por defecto al iniciar el contenedor
-CMD ["startup.sh"]
+CMD ["startupS.sh"]
